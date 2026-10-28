@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Sample Page</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      color: #1f2937;
+      background: #f9fafb;
+    }
+    nav {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav .logo { font-weight: 700; font-size: 1.2rem; }
+    nav a { margin-left: 20px; color: #4b5563; text-decoration: none; }
+    nav a:hover { color: #2563eb; }
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #dbeafe, #ede9fe);
+    }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 12px; }
+    .hero p { color: #4b5563; max-width: 520px; margin: 0 auto 24px; }
+    .btn {
+      display: inline-block;
+      background: #2563eb;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .btn:hover { background: #1d4ed8; }
+    .container { max-width: 900px; margin: 0 auto; padding: 48px 20px; }
+    .container h2 { text-align: center; margin-bottom: 28px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .card h3 { margin-bottom: 8px; }
+    .card p { color: #6b7280; font-size: 0.95rem; }
+    form { max-width: 480px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    input, textarea {
+      padding: 10px 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font: inherit;
+    }
+    #form-msg { text-align: center; margin-top: 12px; color: #16a34a; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: #6b7280;
+      font-size: 0.9rem;
+      border-top: 1px solid #e5e7eb;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">MySite</div>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero" id="home">
+    <h1>Welcome to My Sample Page</h1>
+    <p>A clean, simple starting point you can customize for any project.</p>
+    <a href="#features" class="btn">Learn more</a>
+  </section>
+
+  <section class="container" id="features">
+    <h2>Features</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Responsive</h3>
+        <p>Looks good on phones, tablets, and desktops.</p>
+      </div>
+      <div class="card">
+        <h3>Lightweight</h3>
+        <p>Just one HTML file with no external libraries.</p>
+      </div>
+      <div class="card">
+        <h3>Easy to edit</h3>
+        <p>Change the text and colors to make it your own.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container" id="contact">
+    <h2>Contact</h2>
+    <form id="contact-form">
+      <input type="text" placeholder="Your name" required />
+      <input type="email" placeholder="Your email" required />
+      <textarea rows="4" placeholder="Your message" required></textarea>
+      <button type="submit" class="btn">Send</button>
+    </form>
+    <p id="form-msg"></p>
+  </section>
+
+  <footer>&copy; 2026 MySite. All rights reserved.</footer>
+
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      document.getElementById("form-msg").textContent = "Thanks! Your message was received.";
+      this.reset();
+    });
+  </script>
+</body>
+</html>
